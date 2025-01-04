@@ -1,4 +1,4 @@
-#!/user/bin/env node
+#!/usr/bin/env node
 
 const { Command } = require('commander');
 const inquirer = require('inquirer');
@@ -26,7 +26,7 @@ const getApiKey = async () => {
 program
   .command('check <file>')
   .description('Analyze a smart contract')
-  .section(async (file) => {
+  .action(async (file) => {
     try {
       const apiKey = await getApiKey();
       const contractPath = path.resolve(process.cwd(), file);
